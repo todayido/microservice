@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: springboot-demo
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8601/eureka/,http://localhost:8602/eureka/
+  instance:
+    prefer-ip-address: true

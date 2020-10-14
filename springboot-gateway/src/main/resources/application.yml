@@ -1,0 +1,25 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: gateway-zuul-demo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8601/eureka/,http://localhost:8602/eureka/
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  routes:
+    app-a:                            #配置的路由名
+      path: /**                    #访问路径
+      serviceId: springboot-demo  #配置路由的微服务名
+#    app-b: #配置的路由名
+#      path: /**                    #访问路径
+#      serviceId: springboot-demo2  #配置路由的微服务名
+
+ribbon:
+  eureka:
+    enable: false      #暂时关闭eureka对ribbon的支持
+

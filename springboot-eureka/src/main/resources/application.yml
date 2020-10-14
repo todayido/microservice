@@ -1,0 +1,13 @@
+server:
+  port: 8601
+spring:
+  application:
+    name: eureka-server1
+eureka:
+#  instance:
+#    hostname: eurekaserver1
+  client:
+    serviceUrl:
+      # 设置服务注册中心地址，指向另一个注册中心，使用域名作为访问路径
+      defaultZone: http://localhost:8602/eureka/
+    register-with-eureka: false
